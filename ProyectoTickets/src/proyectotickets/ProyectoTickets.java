@@ -1,143 +1,27 @@
 package proyectotickets;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class ProyectoTickets {
     
-    // Este es un programa que permite el checking y venta de entradas en puerta el dï¿½a del concierto por un agente verificador.
-	// DESCRIPCIï¿½N DEL CONTEXTO:
-	// El programa se comenzarï¿½ a utilizar cuando inicie el checking de un concierto, registrando los tickets de las personas que ingresan, se permite la venta de entradas
-	// La capacidad del concierto es de 225 personas, con tres zonas: Palco izquierdo, Zona Vip y Palco Derecho, ademï¿½s de una zona reservada. 
-	// DESCRIPCIï¿½N DEL PROGRAMA: 
-	// 1.- Para poder acceder al programa, el agente verificador ingresa con usuario y contraseï¿½a. 
-	// 2.- En la pantalla de menï¿½, el agente verificador tiene tres opciones: 
+    // Este es un programa que permite el checking y venta de entradas en puerta el día del concierto por un agente verificador.
+	// DESCRIPCIÓN DEL CONTEXTO:
+	// El programa se comenzará a utilizar cuando inicie el checking de un concierto, registrando los tickets de las personas que ingresan, se permite la venta de entradas
+	// La capacidad del concierto es de 225 personas, con tres zonas: Palco izquierdo, Zona Vip y Palco Derecho, además de una zona reservada. 
+	// DESCRIPCIÓN DEL PROGRAMA: 
+	// 1.- Para poder acceder al programa, el agente verificador ingresa con usuario y contraseña. 
+	// 2.- En la pantalla de menú, el agente verificador tiene tres opciones: 
 	// a)Registrar las entradas de las personas que llegan al concierto 
 	// b)Realizar nuevas ventas de entradas comprobando la disponibilidad de la zona requerida.
 	// Al realizar una venta se realiza la facturaciï¿½n de las entradas vendidas, se permite el ingreso manual de descuento, si hubiera. 
 	// c) Salir del programa
 	// ALCANCE DEL PROGRAMA:
-	// La capacidad de entradas y las zonas son valores estï¿½ticos y solo se permite su modificaciï¿½n desde el cï¿½digo.
-	// El presente programa se usa exclusivamente el dï¿½a del checking al momento del ingreso, esto implica que las entradas ya fueron vendidas en una instancia previa
-	// Por lo tanto se realiza una generaciï¿½n de tickets con una venta del 96% al momento de usar el programa. 
-	// No se permite la generaciï¿½n de nuevas entradas; el programa se limita al aforo contemplado y previsto para el espectï¿½culo.
-	public static void titulo() {
-		System.out.println("");
-		System.out.println("                                                 *=====================================*");
-		System.out.println("                                                 *  E N T R A D A S   V E N D I D A S  *");
-		System.out.println("                                                 *=====================================*");
-		System.out.println("                             ______   _____   ______    ______    _   __    ___     ____     ____   ____ ");
-		System.out.println("                            / ____/  / ___/  / ____/   / ____/   / | / /   /   |   / __ \\   /  _/  / __ \\");
-		System.out.println("                           / __/     \\__ \\  / /       / __/     /  |/ /   / /| |  / /_/ /   / /   / / / /");
-		System.out.println("                          / /___    ___/ / / /___    / /___    / /|  /   / ___ | / _, _/  _/ /   / /_/ / ");
-		System.out.println("                         /_____/   /____/  \\____/   /_____/   /_/ |_/   /_/  |_|/_/ |_|  /___/   \\____/  ");
-		System.out.println("           --__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--");
-		System.out.println("           __--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__");
-		System.out.println("");
-		System.out.println(" ||---*--- PALCO IZQUIERDO ---*---||       * RESERVADO *  "+" ||*--*--*--* ZONA   V I P *--*--*--*|| "+"  ||  ---**---   PALCO   DERECHO    ---**---  ||");
-		System.out.println("");
-	}
-
-	// Este subproceso permite el ingreso con usuario y contraseï¿½a al programa, lo realiza el agente verificador. 
-	public static void ingresousuario(boolean validacion) throws IOException {
-		String contrasenia;
-		int intentos;
-		String usuario;
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("        --__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--");
-		System.out.println("        __--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__");
-		System.out.println("");
-		System.out.println("               :::        :::        :::::::::::        :::::::::           :::        :::::::::          ::: ");
-		System.out.println("             :+: :+:      :+:            :+:            :+:    :+:        :+: :+:      :+:    :+:        :+: :+:");
-		System.out.println("            +:+   +:+     +:+            +:+            +:+    +:+       +:+   +:+     +:+    +:+       +:+   +:+ ");
-		System.out.println("           +#++:++#++:    +#+            +#+            +#++:++#+       +#++:++#++:    +#++:++#+       +#++:++#++:");
-		System.out.println("           +#+     +#+    +#+            +#+            +#+    +#+      +#+     +#+    +#+    +#+      +#+     +#+   ");
-		System.out.println("           #+#     #+#    #+#            #+#            #+#    #+#      #+#     #+#    #+#    #+#      #+#     #+#   ");
-		System.out.println("           ###     ###    ########## ###########        #########       ###     ###    #########       ###     ###     ");
-		System.out.println("");
-		System.out.println("        --__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--");
-		System.out.println("        __--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__");
-		System.out.println("");
-		System.out.println("                                       __   __   __   __   __                  __   __   __   __  __ ");
-		System.out.println("                        |  _   _      |__) |__) /  \\ / _  |__)  /\\  |\\/|  /\\  |  \\ /  \\ |__) |_  (_  ");
-		System.out.println("                   \\/   | (_) _)      |    | \\  \\__/ \\__) | \\  /--\\ |  | /--\\ |__/ \\__/ | \\  |__ __) ");
-		System.out.println("                   /                                                                                     ");
-		System.out.println("");
-		System.out.println("");
-		intentos = 3;
-		// Este bucle nos mantiene en la pantalla principal hasta que se ingrese el usuario y contraseï¿½a correctos. 
-		do {
-			System.out.print("                                        Escriba un Usuario: ");
-			usuario = bufEntrada.readLine();
-			System.out.print("                                        Escriba una contraseï¿½a: ");
-			contrasenia = bufEntrada.readLine();
-			intentos = intentos-1;
-			if (usuario.equals("alibaba") && contrasenia.equals("alibaba123")) {
-				System.out.println("                                        B I E N V E N I D O   A   S U  C A M P U S ");
-				validacion = true;
-			} else {
-				System.out.println("");
-				System.out.println("                                        Usuario o contraseï¿½a INCONRRECTA, ï¿½VERIFIQUE SUS DATOS! ");
-				System.out.println("");
-				System.out.println("                                        Le restan "+intentos+" intentos");
-				System.out.println("");
-			}
-		} while (!(validacion==true || intentos==0));
-	}
-
-	public static void diseniomenu() {
-		System.out.println(""); // no hay forma directa de borrar la consola en Java
-		System.out.println("");
-		System.out.println("");
-		System.out.println("*_________________________________________________________________________________________________________*");
-		System.out.println("    B i e n v e n i d o   a l    p r o g r a m a   d e   c h e c k i n g   y   v e n t a  Alï¿½babï¿½10 V1.9 ");
-		System.out.println("*=========================================================================================================*");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("                                        Elija una de las siguientes opciones:");
-		System.out.println("");
-		System.out.println("                                        1.- Verificaciï¿½n de tickets.");
-		System.out.println("                                        2.- Venta de tickets. ");
-		System.out.println("                                        3.- Salir.");
-	}
-
-	public static void mensajesalida() {
-		System.out.println(""); // no hay forma directa de borrar la consola en Java
-		System.out.println("");
-		System.out.println("               :::        :::        :::::::::::        :::::::::           :::        :::::::::          ::: ");
-		System.out.println("             :+: :+:      :+:            :+:            :+:    :+:        :+: :+:      :+:    :+:        :+: :+:");
-		System.out.println("            +:+   +:+     +:+            +:+            +:+    +:+       +:+   +:+     +:+    +:+       +:+   +:+ ");
-		System.out.println("           +#++:++#++:    +#+            +#+            +#++:++#+       +#++:++#++:    +#++:++#+       +#++:++#++:");
-		System.out.println("           +#+     +#+    +#+            +#+            +#+    +#+      +#+     +#+    +#+    +#+      +#+     +#+   ");
-		System.out.println("           #+#     #+#    #+#            #+#            #+#    #+#      #+#     #+#    #+#    #+#      #+#     #+#   ");
-		System.out.println("           ###     ###    ########## ###########        #########       ###     ###    #########       ###     ###     ");
-		System.out.println("        --__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--");
-		System.out.println("        __--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__");
-		System.out.println("                                       __   __   __   __   __                  __   __   __   __  __ ");
-		System.out.println("                        |  _   _      |__) |__) /  \\ / _  |__)  /\\  |\\/|  /\\  |  \\ /  \\ |__) |_  (_  ");
-		System.out.println("                   \\/   | (_) _)      |    | \\  \\__/ \\__) | \\  /--\\ |  | /--\\ |__/ \\__/ | \\  |__ __) ");
-		System.out.println("                   /                                                                                     ");
-		System.out.println("                                      L E S    A G R A D E C E   H A B E R  ");
-		System.out.println("                                     U T I L I Z A D O        N U E S T R O S ");
-		System.out.println("                                                 S E R V I C I O S  ");
-		System.out.println("");
-		System.out.println("                                                               [N]");
-		System.out.println("                                                [G]      [J][U][A][N] ");
-		System.out.println("                                             [P][A][B][L][O]   [T] ");
-		System.out.println("                                                [B]      [R]    ");
-		System.out.println("                                                [R]      [G] ");
-		System.out.println("                                                [I]   [D][E][N][I][S][E]   ");
-		System.out.println("                                          [A][L][E][X]            [E] ");
-		System.out.println("                                          [N]   [L]               [B]  ");
-		System.out.println("                                          [G]                  [M][A][T][I]");
-		System.out.println("                                          [E]                     [S]   ");
-		System.out.println("                                          [L]");
-		System.out.println("");
-		System.out.println("");
-	}
+	// La capacidad de entradas y las zonas son valores estï¿½ticos y solo se permite su modificación desde el código.
+	// El presente programa se usa exclusivamente el día del checking al momento del ingreso, esto implica que las entradas ya fueron vendidas en una instancia previa
+	// Por lo tanto se realiza una generación de tickets con una venta del 96% al momento de usar el programa. 
+	// No se permite la generación de nuevas entradas; el programa se limita al aforo contemplado y previsto para el espectáculo.
+	
 
 	// Este subproceso de menï¿½ permite el ingreso a las 2 funcionalidades principales del programa
 	public static void menu(String vendidas, SIN_TIPO novendidas) throws IOException {
@@ -147,7 +31,7 @@ public class ProyectoTickets {
 		while (salir==false) {
 			diseniomenu();
 			System.out.println("");
-			System.out.print("                                        Elija una opciï¿½n:");
+			System.out.print("                                        Elija una opción:");
 			opcion = bufEntrada.readLine();
 			System.out.println("");
 			if (opcion.equals("1")) {
@@ -196,6 +80,7 @@ public class ProyectoTickets {
 				codigonums = "";
 				for (k=0;k<=2;k++) {
 					// Se Busca un nï¿½mero al azar entre el 1 y el nï¿½mero de letras 
+                                        int numeroRandom = (int)(Math.random()*101);
 					letraaleatoria = Math.floor(Math.random()*dimletras);
 					// Se concatenan 3 letras aleatorias
 					codigoletras = codigoletras.concat(letras.substring(letraaleatoria,letraaleatoria+1));
