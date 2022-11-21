@@ -24,7 +24,7 @@ public class ProyectoTickets {
 	
 
 	// Este subproceso de menï¿½ permite el ingreso a las 2 funcionalidades principales del programa
-	public static void menu(String vendidas, SIN_TIPO novendidas) throws IOException {
+	public static void menu(String vendidas, String novendidas) throws IOException {
 		String opcion;
 		boolean salir;
 		salir = false;
