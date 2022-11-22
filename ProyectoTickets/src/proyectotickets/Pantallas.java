@@ -4,8 +4,57 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Pantallas {
+
+    private int intentos;
+    private String usuario;
+    private String contrasenia;
+    private boolean validacion;
     
-    public static void titulo() {
+    Scanner entrada = new Scanner(System.in);   
+    
+    public Pantallas() {
+    }
+
+    public Pantallas(int intentos, String usuario, String contrasenia, boolean validacion) {
+        this.intentos = intentos;
+        this.usuario = usuario;
+        this.contrasenia = contrasenia;
+        this.validacion = validacion;
+    }
+
+    public int getIntentos() {
+        return intentos;
+    }
+
+    public void setIntentos(int intentos) {
+        this.intentos = intentos;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
+    }
+
+    public boolean isValidacion() {
+        return validacion;
+    }
+
+    public void setValidacion(boolean validacion) {
+        this.validacion = validacion;
+    }  
+    
+    public void titulo() {
 		System.out.println("");
 		System.out.println("                                                 *=====================================*");
 		System.out.println("                                                 *  E N T R A D A S   V E N D I D A S  *");
@@ -23,12 +72,8 @@ public class Pantallas {
 	}
 
 	// Este subproceso permite el ingreso con usuario y contraseï¿½a al programa, lo realiza el agente verificador. 
-	public static void ingresousuario(boolean validacion) throws IOException {
-                Scanner entrada = new Scanner(System.in);
-		int intentos;
-		String usuario;
-		String contrasenia;
-                
+	public void ingresousuario() {
+            
 		System.out.println("");
 		System.out.println("");
 		System.out.println("");
@@ -55,12 +100,15 @@ public class Pantallas {
 		System.out.println("");
 		System.out.println("");
 		intentos = 3;
-		// Este bucle nos mantiene en la pantalla principal hasta que se ingrese el usuario y contraseï¿½a correctos. 
+                this.setIntentos(intentos);
+		// Este bucle nos mantiene en la pantalla principal hasta que se ingrese el usuario y contraseña correctos. 
 		do {
 			System.out.print("                                        Escriba un Usuario: ");
 			usuario = entrada.nextLine();
-			System.out.print("                                        Escriba una Contraseña: ");
+                        this.setUsuario(usuario);
+			System.out.print("                                        Escriba una Contrasenia: ");
 			contrasenia = entrada.nextLine();
+                        this.setContrasenia(contrasenia);
 			intentos = intentos-1;
 			if (usuario.equals("alibaba") && contrasenia.equals("alibaba123")) {
 				System.out.println("                                        B I E N V E N I D O   A   S U  C A M P U S ");
@@ -75,23 +123,23 @@ public class Pantallas {
 		} while (!(validacion==true || intentos==0));
 	}
 
-	public static void diseniomenu() {
+	public void diseniomenu() {
 		System.out.println(""); // no hay forma directa de borrar la consola en Java
 		System.out.println("");
 		System.out.println("");
 		System.out.println("*_________________________________________________________________________________________________________*");
-		System.out.println("    B i e n v e n i d o   a l    p r o g r a m a   d e   c h e c k i n g   y   v e n t a  Alí Babá V1.0 ");
+		System.out.println("    B i e n v e n i d o   a l    p r o g r a m a   d e   c h e c k i n g   y   v e n t a  Ali Baba V1.0 ");
 		System.out.println("*=========================================================================================================*");
 		System.out.println("");
 		System.out.println("");
 		System.out.println("                                        Elija una de las siguientes opciones:");
 		System.out.println("");
-		System.out.println("                                        1.- Verificación de tickets.");
+		System.out.println("                                        1.- Verificacion de tickets.");
 		System.out.println("                                        2.- Venta de tickets. ");
 		System.out.println("                                        3.- Salir.");
 	}
 
-	public static void mensajesalida() {
+	public void mensajesalida() {
 		System.out.println(""); // no hay forma directa de borrar la consola en Java
 		System.out.println("");
 		System.out.println("               :::        :::        :::::::::::        :::::::::           :::        :::::::::          ::: ");
@@ -125,4 +173,6 @@ public class Pantallas {
 		System.out.println("");
 		System.out.println("");
 	}
+        
+        
 }

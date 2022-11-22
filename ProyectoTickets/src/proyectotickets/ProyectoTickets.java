@@ -23,35 +23,19 @@ public class ProyectoTickets {
 	// No se permite la generación de nuevas entradas; el programa se limita al aforo contemplado y previsto para el espectáculo.
 	
 
-	// Este subproceso de menï¿½ permite el ingreso a las 2 funcionalidades principales del programa
-	public static void menu(String vendidas, String novendidas) throws IOException {
-		String opcion;
-		boolean salir;
-		salir = false;
-		while (salir==false) {
-			diseniomenu();
-			System.out.println("");
-			System.out.print("                                        Elija una opción:");
-			opcion = bufEntrada.readLine();
-			System.out.println("");
-			if (opcion.equals("1")) {
-				System.out.println(""); // no hay forma directa de borrar la consola en Java
-				// se invoca al subproceso mostrarVendidas y se muestra la matriz con las entradas vendidas 
-				mostrarvendidas(vendidas);
-				// Se invoca al subproceso de registro y se realiza el cheking de entradas
-				registro(vendidas,novendidas);
-			}
-			if (opcion.equals("2")) {
-				// se invoca al subproceso de ventas
-				ventas(novendidas,vendidas);
-			}
-			if (opcion.equals("3")) {
-				System.out.println("                                        3.- Salir.");
-				salir = true;
-				mensajesalida();
-			}
-		}
-	}
+    /*
+        TAREAS A REALIZAR:
+    
+    1. AGARRAR LA FUNCION O PORCION DE CODIGO QUE LES CORRESPONDE Y CORTARLA DE LA CLASE Proyecto Tikets.
+    2. CREAR UNA NUEVA CLASE EN EL PAQUETE proyectotikets Y PEGAR EL CODIGO.
+    3. CAMBIAR LOS MODIFICADORES DE ACCESO DE CADA VARIABLE COLOCANDOLAS AL INICIO DE LA CLASE.
+    4. CREAR EL CONSTRUCTOR VACÍO DE LA CLASE Y EL CONSTRUCTOR QUE CONTIENE TODOS LAS VARIABLES.
+    4.1 EN CASO DE QUE TENGAN VARIOS METODOS Y CADA METODO TIENE DIFERENTES VARIABLES, ENTONCES A LA HORA DE CREAR EL CONSTRUCTOR SOLO LO CREAN CON LAS VARIABLES QUE TENIAN EN ESE METODO.
+    5. CREAR LOS METODOS GETTER AND SETTER DE CADA VARIABLE.
+    6. MODIFICAR CADA LLAMADO O CAMBIO DE LAS VARIABLES POR EL this.setNombreVariable(nombreVariable);.
+    7.PROBAR EL CODIGO CREANDO UN OBJETO EN LA CLASE PruebaMain Y LLAMAR A SUS METODOS.
+    */
+    
 
 	// Este subproceso genera las entradas totales con el cï¿½digo alfanumï¿½rico 
 	public static void entradastotales(String matriz[][]) {
@@ -69,9 +53,9 @@ public class ProyectoTickets {
 		int totalentradas;
 		// creamos 2 arreglos que contienen los caracteres a generar
 		letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		// Obtenemos el nï¿½mero total de letras 
+		// Obtenemos el mero total de letras 
 		dimletras = letras.length();
-		nums = Double.toString(1234567890);
+		nums = "0123456789";
 		// Este bucle crea los cï¿½digos aleatorios de TODAS las entradas generadas para el concierto.
 		for (i=0;i<=14;i++) {
 			// Se considera una matriz de 15x5 es decir 225 entradas totales. 
