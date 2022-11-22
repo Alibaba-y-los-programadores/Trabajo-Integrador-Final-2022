@@ -449,70 +449,7 @@ public class ProyectoTickets {
 		}
 	}
 
-	// Este subproceso permite la facturaciï¿½n de las entradas vendidas en puerta 
-	public static void cobro_ticket(double cantcompra, double cantdisponible, String ticketsventa[], int zona) throws IOException {
-		double descuento;
-		int l;
-		boolean rta;
-		double subtotal;
-		double totalcompra;
-		double totaldesc;
-		double valorentrada;
-		System.out.println("");
-		// si la cantidad requerida para la compra es mayor a los tickets disponibles no se procede a la venta.
-		if (cantcompra>cantdisponible) {
-			System.out.println("                                                El nï¿½mero de entradas solicitadas supera al nï¿½mero de entradas disponibles. ");
-		} else {
-			// si la venta es correcta, se mostrarï¿½ en pantalla los tickets vendidos para la zona correspondiente. 
-			switch (zona) {
-			case 1:
-				System.out.print("                                                TICKETS VENDIDOS EN PALCO IZQUIERDO: ");
-				break;
-			case 2:
-				System.out.print("                                                TICKETS VENDIDOS EN ZONA DE RESERVADOS: ");
-				break;
-			case 3:
-				System.out.print("                                                TICKETS VENDIDOS EN ZONA VIP: ");
-				break;
-			case 4:
-				System.out.print("                                                TICKETS VENDIDOS EN PALCO DERECHO: ");
-				break;
-			}
-			// Este bucle muestra las entradas asignadas en la ï¿½ltima venta listas para facturar. 
-			for (l=0;l<=cantcompra-1;l++) {
-				System.out.print("["+ticketsventa[l]+"] ");
-			}
-			System.out.println("");
-			// Valor pre definido de la entrada
-			valorentrada = 2000;
-			// subtotal
-			subtotal = valorentrada*cantcompra;
-			System.out.println("");
-			System.out.println("                                                     *=============================*");
-			System.out.println("                                                      *   F A C T U R A C I ï¿½ N   *");
-			System.out.println("                                                     *=============================*");
-			System.out.println("                                                Facturar la siguiente cantidad: "+cantcompra+" Entradas");
-			rta = false;
-			do {
-				System.out.print("                                                Ingrese el % de descuento: ");
-				descuento = Double.parseDouble(bufEntrada.readLine());
-				if (descuento>=0 && descuento<=100) {
-					rta = true;
-				} else {
-					System.out.println("                                                Debe ingresar un valor entre 0 y 100!!! ");
-					System.out.println("");
-				}
-			} while (rta!=true);
-			// descuento a aplicar
-			totaldesc = (subtotal*descuento)/100;
-			totalcompra = subtotal-totaldesc;
-			System.out.println("                                                --------------------------------");
-			System.out.println("                                                Importe  total               : "+subtotal);
-			System.out.println("                                                Descuento realizado          : "+totaldesc);
-			System.out.println("                                                Total a pagar                : "+totalcompra);
-			System.out.println("");
-		}
-	}
+	
 
 	// proceso principal del programa
 	public static void main(String args[]) throws InterruptedException {
