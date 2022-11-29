@@ -16,6 +16,7 @@ public class PruebaMain {
         class => NombreDeLaClase (Cada letra inicial de palabra en mayuscula) objeto => nombreObjeto (camelCase Primera palabra en minuscula las demas en Mayuscula)
         */
         Pantallas pantallas = new Pantallas();
+        pantallas.mensajesalida();
         
         //creamos un objeto nuevo de la clase Menu con el nombre menu
         Menu menu = new Menu();
