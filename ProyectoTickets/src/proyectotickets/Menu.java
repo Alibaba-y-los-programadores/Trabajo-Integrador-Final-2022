@@ -72,7 +72,7 @@ public class Menu {
 			if (opcion.equals("3")) {
 				System.out.println("                                        3.- Salir.");
 				salir = true;
-				//mensajesalida();
+				pantallas.mensajesalida();
 			}
 		}
 	}
