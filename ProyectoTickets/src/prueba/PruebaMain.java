@@ -29,18 +29,13 @@ public class PruebaMain {
         //registrar.registrar();
 
         MostrarVendidas mostrarvendidas = new MostrarVendidas();
-        String[][] matriz = new String[3][3];
-
-        matriz[0][0] = "Marta";
-        matriz[0][1] = "Luis";
-        matriz[0][2] = "Nacho";
-        matriz[1][0] = "Juancho";
-        matriz[1][1] = "Anabel";
-        matriz[1][2] = "Julio";
-        matriz[2][0] = "María";
-        matriz[2][1] = "David";
-        matriz[2][2] = "Gema";
-        
+        String[][] matriz = new String[15][15];
+        for (int i = 0; i <= 14; i++) {
+            // Se considera una matriz de 15x5 es decir 225 entradas totales. 
+            for (int j = 0; j <= 14; j++) {
+                matriz[i][j] = "aaa111";
+            }
+        }
         mostrarvendidas.mostrarvendidas(matriz);
         
   

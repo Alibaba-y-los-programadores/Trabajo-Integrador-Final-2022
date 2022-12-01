@@ -33,12 +33,15 @@ public class MostrarVendidas {
     
     public void mostrarvendidas(String vendidas[][]) {
         Pantallas pantallas= new Pantallas();
+        	
 		j = 0;
-                this.setJ(j);       
+                this.setJ(j);
+                        
+                        
 		pantallas.titulo();
 		for (i=0;i<=14;i++) {
 			if ((j<=15)) {
-				if (vendidas[i][0].length()<8) {
+				if (vendidas[i][0].length()<=8) {
 					System.out.print(" ");
 				}
 			}
