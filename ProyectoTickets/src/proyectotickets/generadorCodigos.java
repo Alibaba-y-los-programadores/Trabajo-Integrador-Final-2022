@@ -165,7 +165,18 @@ public class GeneradorCodigos {
         this.codigotickets = this.codigoletras.concat(this.codigonums);
         return this.codigotickets;
     }
-
-   
+ // Este subproceso genera las entradas totales con el cï¿½digo alfanumerico 
+    public String[][] generadorMatriz() {
+        String[][] matriz = new String[15][15];
+        // Este bucle crea los codigos aleatorios de TODAS las entradas generadas para el concierto.
+        for (i = 0; i <= 14; i++) {
+            // Se considera una matriz de 15x5 es decir 225 entradas totales. 
+            for (j = 0; j <= 14; j++) {
+                matriz[i][j] = generadorCodigo();
+                System.out.print(matriz[i][j]);
+            }System.out.println(" ");
+        }
+        return matriz;
+    }
 
 }
