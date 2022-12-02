@@ -5,9 +5,7 @@
 package proyectotickets;
 
 import java.util.Scanner;
-import static proyectotickets.ProyectoTickets.mostrarvendidas;
-import static proyectotickets.ProyectoTickets.registro;
-import static proyectotickets.ProyectoTickets.ventas;
+
 
 /**
  *

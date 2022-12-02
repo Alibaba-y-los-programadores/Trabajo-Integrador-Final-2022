@@ -38,7 +38,7 @@ public class ProyectoTickets {
     
 
 	// Este subproceso genera las entradas totales con el cï¿½digo alfanumï¿½rico 
-	public static void entradastotales(String matriz[][]) {
+	/*public static void entradastotales(String matriz[][]) {
 		String codigoletras;
 		String codigonums;
 		String codigotickets;
@@ -162,8 +162,7 @@ public class ProyectoTickets {
 			codigodet = false;
 			condicionvendido = false;
 			for (i=0;i<=14;i++) {
-				for (j=0;j<=14;j++) {
-					boletoregistrado = codigodev.concat(",)) "),;
+				for (j=0;j<=14;j++) {					boletoregistrado = codigodev.concat(",)) "),;
 					// Esta condiciï¿½n compara el ticket ingresado con cada elemento de la matriz de tickets vendidos
 					if ((vendidas[i][j].equals(codigodev))) {
 						// por si en algun momento se quiere mostrar la posiciï¿½n
@@ -476,5 +475,5 @@ public class ProyectoTickets {
 			Thread.sleep(2*1000);
 			mensajesalida();
 		}
-	}
+	}*/
 }

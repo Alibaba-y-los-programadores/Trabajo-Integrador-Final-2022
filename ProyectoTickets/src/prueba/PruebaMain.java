@@ -7,7 +7,7 @@ package prueba;
 import proyectotickets.Menu;
 import proyectotickets.MostrarVendidas;
 import proyectotickets.Pantallas;
-import proyectotickets.Registrar;
+import proyectotickets.MostrarNoVendidas;
 
 public class PruebaMain {
 
@@ -25,8 +25,7 @@ public class PruebaMain {
 
         //usando el objeto  menu podemos llamar a todos los metodos (funciones) que contiene la clase a la que pertenece. 
         //menu.menu();
-        Registrar registrar = new Registrar();
-        //registrar.registrar();
+        
 
         MostrarVendidas mostrarvendidas = new MostrarVendidas();
         String[][] matriz = new String[15][15];
@@ -36,8 +35,16 @@ public class PruebaMain {
                 matriz[i][j] = "aaa111";
             }
         }
-        mostrarvendidas.mostrarvendidas(matriz);
+       // mostrarvendidas.mostrarvendidas(matriz);
         
-  
-    }
+        MostrarNoVendidas mostrarnovendidas = new MostrarNoVendidas();
+        String[][] novendidas = new String[15][15];
+        for (int i = 0; i <= 14; i++) {
+             
+            for (int j = 0; j <= 14; j++) {
+                novendidas[i][j] = "aaaaaa";
+            }
+        }
+        mostrarnovendidas.mostrarnovendidas(novendidas);
+        }
 }
