@@ -8,6 +8,7 @@ import proyectotickets.Menu;
 import proyectotickets.MostrarVendidas;
 import proyectotickets.Pantallas;
 import proyectotickets.MostrarNoVendidas;
+import proyectotickets.Registro;
 
 public class PruebaMain {
 
@@ -28,23 +29,28 @@ public class PruebaMain {
         
 
         MostrarVendidas mostrarvendidas = new MostrarVendidas();
-        String[][] matriz = new String[15][15];
+        String[][] vendidas = new String[15][15];
         for (int i = 0; i <= 14; i++) {
             // Se considera una matriz de 15x5 es decir 225 entradas totales. 
             for (int j = 0; j <= 14; j++) {
-                matriz[i][j] = "aaa111";
+                vendidas[i][j] = "aaa111";
             }
         }
        // mostrarvendidas.mostrarvendidas(matriz);
         
         MostrarNoVendidas mostrarnovendidas = new MostrarNoVendidas();
-        String[][] novendidas = new String[15][15];
+        String[][] noVendidas = new String[15][15];
         for (int i = 0; i <= 14; i++) {
              
             for (int j = 0; j <= 14; j++) {
-                novendidas[i][j] = "aaaaaa";
+                noVendidas[i][j] = "vvvvvv";
             }
         }
-        mostrarnovendidas.mostrarnovendidas(novendidas);
+        mostrarnovendidas.mostrarnovendidas(noVendidas);
+        
+        Registro registro = new Registro();
+        
+        registro.registro(vendidas, noVendidas);
+        
         }
 }

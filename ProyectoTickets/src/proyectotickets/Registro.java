@@ -150,5 +150,54 @@ public class Registro {
                 }
             }
         }
+       System.out.println(""); // no hay forma directa de borrar la consola en Java
+           
+       MostrarVendidas mostrarVendidas = new MostrarVendidas();
+       
+       mostrarVendidas.mostrarvendidas(vendidas);
+            // Las siguientes condiciones evaluan si el ticket ingresado es valido, si no es valido o si ya fue registrado. 
+            if (codigodet == true) {
+                System.out.println("");
+                System.out.println("                                      *==========================================*");
+                System.out.println("                                       * El Ticket ingresado  E S   V A L I D O *");
+                System.out.println("                                      *==========================================*");
+                System.out.println("");
+            } else {
+                if (condicionvendido == true) {
+                    System.out.println("");
+                    System.out.println("                                      *========================================================*");
+                    System.out.println("                                       * El Ticket ingresado  Y A  F U E  R E G I S T R A D O *");
+                    System.out.println("                                      *=========================================================*");
+                    System.out.println("");
+                } else {
+                    System.out.println("");
+                    System.out.println("                                      *================================================*");
+                    System.out.println("                                       * El Ticket ingresado  N O   E S   V A L I D O *");
+                    System.out.println("                                      *================================================*");
+                    System.out.println("");
+                }
+            }
+            // Este bucle permite la opcion de registrar mas tickets o regresar al menu principal.
+            do {
+                System.out.println("                                        ¿Desea seguir registrando boletos?");
+                System.out.println("                                        1.- Si.");
+                System.out.println("                                        2.- No.");
+                System.out.print("                                        ");
+                opcion = entrada.nextLine();
+                if (opcion.equals("2")) {
+                    condicion = false;
+                } else {
+                    if (opcion.equals("1")) {
+                        condicion = true;
+                    } else {
+                        System.out.println("");
+                        System.out.println("                                      *================================================*");
+                        System.out.println("                                          * Ingrese una opcion  N O   V A L I D A *");
+                        System.out.println("                                      *================================================*");
+                        System.out.println("");
+                    }
+                }
+            } while (!(opcion.equals("1") || opcion.equals("2"))); 
+        
     }
 }
