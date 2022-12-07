@@ -79,28 +79,7 @@ public class ProyectoTickets {
 		}
 	}
 
-	// Este subproceso genera aleatoriamente las entradas vendidas considerando una venta de 96% al momento de usar el programa. 
-	public static void entradasvendidas(String matriz[][], String vendidas[][], String novendidas[][]) {
-		int i;
-		int j;
-		int simulador;
-		for (i=0;i<=14;i++) {
-			for (j=0;j<=14;j++) {
-				simulador = Math.floor(Math.random()*30);
-				// Esta condiciï¿½n permite simular una venta de 96%. 
-				if (simulador<29) {
-					// se genera la matriz de entradas vendidas, para realizar el registro
-					vendidas[i][j] = matriz[i][j];
-					novendidas[i][j] = "      ";
-				} else {
-					vendidas[i][j] = "      ";
-					// Se genera la matriz de entradas noVendidas, entradas disponibles para la venta.
-					novendidas[i][j] = matriz[i][j];
-				}
-			}
-		}
-		System.out.println("");
-	}
+	
 
 	// Este subproceso mostrarï¿½ la matriz con las entradas vendidas cada vez que lo llamemos
 	public static void mostrarvendidas(String vendidas[][]) {

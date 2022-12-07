@@ -4,6 +4,7 @@
  */
 package prueba;
 
+import proyectotickets.EntradasVendidasNoVendidas;
 import proyectotickets.Menu;
 import proyectotickets.MostrarVendidas;
 import proyectotickets.Pantallas;
@@ -46,11 +47,16 @@ public class PruebaMain {
                 noVendidas[i][j] = "vvvvvv";
             }
         }
-        mostrarnovendidas.mostrarnovendidas(noVendidas);
+       // mostrarnovendidas.mostrarnovendidas(noVendidas);
         
         Registro registro = new Registro();
         
-        registro.registro(vendidas, noVendidas);
+        //registro.registro(vendidas, noVendidas);
         
+        
+        EntradasVendidasNoVendidas entradasVendidasNoVendidas = new EntradasVendidasNoVendidas();
+        
+        entradasVendidasNoVendidas.entradasVendidas(vendidas);
+                entradasVendidasNoVendidas.entradasNoVendidas(vendidas);
         }
 }
