@@ -14,15 +14,15 @@ public class Cobro {
     
     Scanner entrada = new Scanner(System.in); 
     
-    // Este subproceso permite la facturaciï¿½n de las entradas vendidas en puerta 
-	public void cobro_ticket(double cantcompra, double cantdisponible, String ticketsventa[], int zona) {
+    // Este subproceso permite la facturacion de las entradas vendidas en puerta 
+	public void cobro_ticket(int cantcompra, int cantdisponible, String ticketsventa[], int zona) {
 		double descuento;
 		int l;
 		boolean rta;
 		double subtotal;
 		double totalcompra;
 		double totaldesc;
-		double valorentrada;
+		int valorentrada;
 		System.out.println("");
 		// si la cantidad requerida para la compra es mayor a los tickets disponibles no se procede a la venta.
 		if (cantcompra>cantdisponible) {
@@ -43,7 +43,7 @@ public class Cobro {
 				System.out.print("                                                TICKETS VENDIDOS EN PALCO DERECHO: ");
 				break;
 			}
-			// Este bucle muestra las entradas asignadas en la ï¿½ltima venta listas para facturar. 
+			// Este bucle muestra las entradas asignadas en la ultima venta listas para facturar. 
 			for (l=0;l<=cantcompra-1;l++) {
 				System.out.print("["+ticketsventa[l]+"] ");
 			}
@@ -54,7 +54,7 @@ public class Cobro {
 			subtotal = valorentrada*cantcompra;
 			System.out.println("");
 			System.out.println("                                                     *=============================*");
-			System.out.println("                                                      *   F A C T U R A C I ï¿½ N   *");
+			System.out.println("                                                      *   F A C T U R A C I O N   *");
 			System.out.println("                                                     *=============================*");
 			System.out.println("                                                Facturar la siguiente cantidad: "+cantcompra+" Entradas");
 			rta = false;
