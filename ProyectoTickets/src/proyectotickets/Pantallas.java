@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class Pantallas {
 
-    private int intentos;
+    private int intentos = 3;
     private String usuario;
     private String contrasenia;
-    private boolean validacion;
+    boolean validacion = false;
     
     Scanner entrada = new Scanner(System.in);   
     
@@ -46,7 +46,8 @@ public class Pantallas {
         this.contrasenia = contrasenia;
     }
 
-    public boolean isValidacion() {
+    public boolean getValidacion() {
+        ingresousuario();
         return validacion;
     }
 
@@ -99,7 +100,7 @@ public class Pantallas {
 		System.out.println("                   /                                                                                     ");
 		System.out.println("");
 		System.out.println("");
-		intentos = 3;
+                
                 this.setIntentos(intentos);
 		// Este bucle nos mantiene en la pantalla principal hasta que se ingrese el usuario y contraseña correctos. 
 		do {
@@ -111,6 +112,7 @@ public class Pantallas {
                         this.setContrasenia(contrasenia);
 			intentos = intentos-1;
 			if (usuario.equals("alibaba") && contrasenia.equals("alibaba123")) {
+                                System.out.println("");
 				System.out.println("                                        B I E N V E N I D O   A   S U  C A M P U S ");
 				validacion = true;
 			} else {

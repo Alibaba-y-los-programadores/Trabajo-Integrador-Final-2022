@@ -3,7 +3,7 @@ package proyectotickets;
 // Este subproceso sirve para realizar el checking 
 import java.util.Scanner;
 
-// Se pide el ingreso manual del codigo a verifica, Si existe el codigo, aparecería una leyenda con codigo valido. Se sobreescribe dicha posicion con 00.
+// Se pide el ingreso manual del codigo a verificar, Si existe el codigo, aparecería una leyenda con codigo valido. Se sobreescribe dicha posicion con [].
 public class Registro {
 
     private String boletoregistrado;
@@ -115,41 +115,42 @@ public class Registro {
         this.opcion = opcion;
     }
 
-    public void registro(String vendidas[][], String novendidas[][]) {
+    public void registro(String vendidas[][], String novendidas[][]){
 
         // Se le pedira que ingrese el codigo a verificar.Debe ser ingresado manualmente. Si existe el codigo, apareceria una leyenda con codigo valido. Se sobreescribe dicha posicion con 00.
 
         System.out.println("");
-        // por si en algun momento se quiere mostrar la posiciïón
+        // por si en algun momento se quiere mostrar la posicion
         condicion = true;
-        while (condicion == true) {
-            System.out.print("                                        - Ingrese el código del ticket");
+        while(condicion == true){
+            System.out.print("                                        - Ingrese el código del ticket: ");
             // Esta variable almacena el codigo de ticket que el agente verificador ingrese manualmente. 
-            codigodev = entrada.nextLine();
+            codigodev = entrada.nextLine().toUpperCase();
             // con esta funcion se arregla el error de de 
-            codigodev = codigodev.toUpperCase();
+            //codigodev = codigodev.toUpperCase();
             codigodet = false;
             condicionvendido = false;
-            for (i = 0; i <= 14; i++) {
-                for (j = 0; j <= 14; j++) {
-                    boletoregistrado = codigodev.concat(",)) ");
+            for(i = 0; i <= 14; i++){
+                for(j = 0; j <= 14; j++){
+                    boletoregistrado = codigodev.concat("] ");
                     // Esta condicion compara el ticket ingresado con cada elemento de la matriz de tickets vendidos
-                    if ((vendidas[i][j].equals(codigodev))) {
+                    if(vendidas[i][j].equals(codigodev)){
+                        condicion = false;
                         // por si en algun momento se quiere mostrar la posicion
                         fila = i;
                         // por si en algun momento se quiere mostrar la posiciï¿½n
                         columna = j;
                         // Cuando el ticket ingresado coincide con un elemento de la matriz, la variable codigoDet pasa a ser verdadera
                         codigodet = true;
-                        vendidas[i][j] = vendidas[i][j].concat(",)) ");
+                        vendidas[i][j] = vendidas[i][j].concat("] ");
                     }
-                    if (vendidas[i][j].equals(boletoregistrado)) {
+                    if(vendidas[i][j].equals(boletoregistrado)){
                         // Esta condicion evalua si un ticket ya fue ingresado anteriormente. 
                         condicionvendido = true;
                     }
                 }
             }
-        }
+       
        System.out.println(""); // no hay forma directa de borrar la consola en Java
            
        MostrarVendidas mostrarVendidas = new MostrarVendidas();
@@ -182,7 +183,8 @@ public class Registro {
                 System.out.println("                                        ¿Desea seguir registrando boletos?");
                 System.out.println("                                        1.- Si.");
                 System.out.println("                                        2.- No.");
-                System.out.print("                                        ");
+                System.out.println("");
+                System.out.print("                                        Opcion: ");
                 opcion = entrada.nextLine();
                 if (opcion.equals("2")) {
                     condicion = false;
@@ -197,7 +199,8 @@ public class Registro {
                         System.out.println("");
                     }
                 }
-            } while (!(opcion.equals("1") || opcion.equals("2"))); 
+            }while (!(opcion.equals("1") || opcion.equals("2"))); 
         
+        }
     }
 }

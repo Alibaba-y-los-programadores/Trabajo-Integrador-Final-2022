@@ -18,6 +18,7 @@ public class EntradasTotales {
     private int k;
 
     public EntradasTotales() {
+        
     }
 
     public EntradasTotales(String codigoletras, String codigonums, String codigotickets, int dimletras, int letraaleatoria, String letras, int numaleatorio, String nums, int totalentradas, int i, int j, int k, String matriz) {
@@ -37,6 +38,7 @@ public class EntradasTotales {
     }
 
     public String getMatriz() {
+        generadorMatriz();
         return matriz;
     }
 
@@ -173,8 +175,8 @@ public class EntradasTotales {
             // Se considera una matriz de 15x5 es decir 225 entradas totales. 
             for (j = 0; j <= 14; j++) {
                 matriz[i][j] = entradasTotales();
-                System.out.print(matriz[i][j]);
-            }System.out.println(" ");
+                //System.out.print(matriz[i][j]);
+            }//System.out.println(" ");
         }
         return matriz;
     }

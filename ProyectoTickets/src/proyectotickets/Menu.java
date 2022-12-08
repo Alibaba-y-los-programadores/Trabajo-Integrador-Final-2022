@@ -5,7 +5,7 @@
 package proyectotickets;
 
 import java.util.Scanner;
-
+import proyectotickets.*;
 
 /**
  *
@@ -45,8 +45,10 @@ public class Menu {
     
     
     // Este subproceso de menu permite el ingreso a las 2 funcionalidades principales del programa
-	public void menu(/*String vendidas, String novendidas*/){
+	public void menu(String vendidas[][], String novendidas[][]){
             Pantallas pantallas = new Pantallas();
+            MostrarVendidas mVendidas = new MostrarVendidas();
+            Registro checking = new Registro();
 		salir = false;
                 this.setSalir(salir);
 		while (salir==false) {
@@ -59,9 +61,9 @@ public class Menu {
 			if (opcion.equals("1")) {
 				System.out.println(""); // no hay forma directa de borrar la consola en Java
 				// se invoca al subproceso mostrarVendidas y se muestra la matriz con las entradas vendidas 
-				//mostrarvendidas(vendidas);
+				mVendidas.mostrarvendidas(vendidas);
 				// Se invoca al subproceso de registro y se realiza el cheking de entradas
-				//registro(vendidas,novendidas);
+				checking.registro(vendidas, novendidas);
 			}
 			if (opcion.equals("2")) {
 				// se invoca al subproceso de ventas

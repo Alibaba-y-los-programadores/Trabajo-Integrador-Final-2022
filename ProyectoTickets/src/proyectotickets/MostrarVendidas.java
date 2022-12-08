@@ -7,36 +7,13 @@ public class MostrarVendidas {
     
 
     public MostrarVendidas() {
+        
     }
 
-    public MostrarVendidas(int i, int j) {
-        this.i = i;
-        this.j = j;
-    }
-
-    public int getI() {
-        return i;
-    }
-
-    public void setI(int i) {
-        this.i = i;
-    }
-
-    public int getJ() {
-        return j;
-    }
-
-    public void setJ(int j) {
-        this.j = j;
-    }
-    
-    
     public void mostrarvendidas(String vendidas[][]) {
         Pantallas pantallas= new Pantallas();
         	
 		j = 0;
-                this.setJ(j);
-                        
                         
 		pantallas.titulo();
 		for (i=0;i<=14;i++) {

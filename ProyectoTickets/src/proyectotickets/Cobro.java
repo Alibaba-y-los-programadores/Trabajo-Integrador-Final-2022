@@ -28,20 +28,12 @@ public class Cobro {
 		if (cantcompra>cantdisponible) {
 			System.out.println("                                                El numero de entradas solicitadas supera al numero de entradas disponibles. ");
 		} else {
-			// si la venta es correcta, se mostrarï¿½ en pantalla los tickets vendidos para la zona correspondiente. 
+			// si la venta es correcta, se mostraria en pantalla los tickets vendidos para la zona correspondiente. 
 			switch (zona) {
-			case 1:
-				System.out.print("                                                TICKETS VENDIDOS EN PALCO IZQUIERDO: ");
-				break;
-			case 2:
-				System.out.print("                                                TICKETS VENDIDOS EN ZONA DE RESERVADOS: ");
-				break;
-			case 3:
-				System.out.print("                                                TICKETS VENDIDOS EN ZONA VIP: ");
-				break;
-			case 4:
-				System.out.print("                                                TICKETS VENDIDOS EN PALCO DERECHO: ");
-				break;
+			case 1 -> System.out.print("                                                TICKETS VENDIDOS EN PALCO IZQUIERDO: ");
+			case 2 -> System.out.print("                                                TICKETS VENDIDOS EN ZONA DE RESERVADOS: ");
+			case 3 -> System.out.print("                                                TICKETS VENDIDOS EN ZONA VIP: ");
+			case 4 -> System.out.print("                                                TICKETS VENDIDOS EN PALCO DERECHO: ");
 			}
 			// Este bucle muestra las entradas asignadas en la ultima venta listas para facturar. 
 			for (l=0;l<=cantcompra-1;l++) {
