@@ -7,7 +7,7 @@ public class ProyectoTickets {
     
     boolean validacion = false;
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         
         //Creo las matrices donde se almacenaran los tickets
         String[][] matriz = new String[15][15];
@@ -17,8 +17,6 @@ public class ProyectoTickets {
         //Instancio las clases para poder llamar a los metodos y funciones
         Pantallas login = new Pantallas();
         EntradasTotales entradas = new EntradasTotales();
-        MostrarVendidas mVendidas = new MostrarVendidas();
-        MostrarNoVendidas mnVendidas = new MostrarNoVendidas();
         EntradasVendidasNoVendidas escenario = new EntradasVendidasNoVendidas();
         Menu menu = new Menu();
         
@@ -32,7 +30,12 @@ public class ProyectoTickets {
         if(login.getValidacion()){
             menu.menu(vendidas, novendidas);
         }else{
-            System.out.println("Intente nuevamente mas tarde!!!");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("Se vencieron los intentos de inicio de sesion!!!");
+            System.out.println("");
+            System.out.println("");
+            login.mensajesalida();
         }
     }
     

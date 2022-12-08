@@ -1,6 +1,6 @@
 package proyectotickets;
 
-import java.io.IOException;
+
 import java.util.Scanner;
 
 public class Pantallas {
@@ -142,7 +142,7 @@ public class Pantallas {
 	}
 
 	public void mensajesalida() {
-		System.out.println(""); // no hay forma directa de borrar la consola en Java
+		System.out.println(""); 
 		System.out.println("");
 		System.out.println("               :::        :::        :::::::::::        :::::::::           :::        :::::::::          ::: ");
 		System.out.println("             :+: :+:      :+:            :+:            :+:    :+:        :+: :+:      :+:    :+:        :+: :+:");
