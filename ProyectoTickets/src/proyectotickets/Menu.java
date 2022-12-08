@@ -49,6 +49,7 @@ public class Menu {
             Pantallas pantallas = new Pantallas();
             MostrarVendidas mVendidas = new MostrarVendidas();
             Registro checking = new Registro();
+            Ventas venta = new Ventas();
 		salir = false;
                 this.setSalir(salir);
 		while (salir==false) {
@@ -67,7 +68,7 @@ public class Menu {
 			}
 			if (opcion.equals("2")) {
 				// se invoca al subproceso de ventas
-				//ventas(novendidas,vendidas);
+				venta.ventas(vendidas, novendidas);
 			}
 			if (opcion.equals("3")) {
 				System.out.println("                                        3.- Salir.");

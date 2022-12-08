@@ -168,6 +168,8 @@ public class Ventas {
     public void ventas(String vendidas[][], String noVendidas[][]) {
         MostrarVendidas  mVendidas = new MostrarVendidas();
         MostrarNoVendidas mNoVendidas = new MostrarNoVendidas();
+        MostrarNoVendidas mnVendidas = new MostrarNoVendidas();
+        Cobro cobro = new Cobro();
         
         this.setCantcompra(cantcompra);
         this.setCantdisponible(cantdisponible);
@@ -190,8 +192,6 @@ public class Ventas {
         // todo el proceso de ventas se repetira mientras no se explicite salir del programa. 
         while (condicion == true) {
             opcion = 0;
-            mVendidas.mostrarvendidas(vendidas);
-            System.out.println(""); // no hay forma directa de borrar la consola en Java
             // Se invoca al SubProceso de noVendidas y se muestra la matriz con las entradas disponibles a la venta.
             mNoVendidas.mostrarnovendidas(noVendidas);
             // Contador de entradas en palco izquierdo
@@ -226,8 +226,11 @@ public class Ventas {
                     }
                 }
             }
-            System.out.println("                                              *=========================================*");
             // Se muestra en pantalla la cantidad de tickets que tenemos por zona
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("                                              *=========================================*");
             System.out.println("                                               *   TICKETS DISPONIBLES PARA LA VENTA   *");
             System.out.println("                                              *=========================================*");
             System.out.println("                                                1.- Palco izquierdo        : " + contadorpalcoizquierdo);
@@ -236,15 +239,15 @@ public class Ventas {
             System.out.println("                                                4.- Palco derecho          : " + contadorpalcoderecho);
             System.out.println("                                                5.- Salir.");
             System.out.println("");
-            System.out.print("                                                Ingrese la zona dï¿½nde desea vender: ");
+            System.out.print("                                                Ingrese la zona donde desea vender: ");
             // el verificador ingresara la zona por teclado decuerdo a lo que el cliente le pida. 
             zona = entrada.nextInt();
-            System.out.print("                                                Ingrese la cantidad de tickets que desea vender:");
+            System.out.print("                                                Ingrese la cantidad de tickets que desea vender: ");
             // Este bucle obliga al verificador a ingresar una zona correcta. 
             do {
                 // Condicional multiple para vender los tickets de acuerdo a la zona requerida 
                 switch (zona) {
-                    case 1:
+                    case 1 -> {
                         cantcompra = entrada.nextInt();
                         // se almacena la cantidad de tickets disponibles de la zona requerida en la variable cantDisponible
                         cantdisponible = contadorpalcoizquierdo;
@@ -267,10 +270,9 @@ public class Ventas {
                                 }
                             }
                         }
-                        //cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
-                        // variable donde se almacena la cantidad de entradas a vender 
-                        break;
-                    case 2:
+                        cobro.cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
+                    }
+                    case 2 -> {
                         cantcompra = entrada.nextInt();
                         // se almacena la cantidad de tickets disponibles de la zona requerida en la variable cantDisponible
                         cantdisponible = contadorreservados;
@@ -293,10 +295,9 @@ public class Ventas {
                                 }
                             }
                         }
-                        //cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
-                        // variable donde se almacena la cantidad de entradas a vender 
-                        break;
-                    case 3:
+                        cobro.cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
+                    }
+                    case 3 -> {
                         cantcompra = entrada.nextInt();
                         // se almacena la cantidad de tickets disponibles de la zona requerida en la variable cantDisponible
                         cantdisponible = contadorvip;
@@ -319,10 +320,9 @@ public class Ventas {
                                 }
                             }
                         }
-                        //cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
-                        // variable donde se almacena la cantidad de entradas a vender 
-                        break;
-                    case 4:
+                        cobro.cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
+                    }
+                    case 4 -> {
                         cantcompra = entrada.nextInt();
                         // se almacena la cantidad de tickets disponibles de la zona requerida en la variable cantDisponible
                         cantdisponible = contadorpalcoderecho;
@@ -345,23 +345,24 @@ public class Ventas {
                                 }
                             }
                         }
-                        //cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
-                        break;
-                    case 5:
+                        cobro.cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
+                    }
+                    case 5 -> {
                         opcion = 2;
                         condicion = false;
-                        break;
-                    default:
-                        System.out.println(""); // no hay forma directa de borrar la consola en Java
-                    //mostrarnovendidas(noVendidas);
+                    }
+                    default -> System.out.println("");
                 }
-            } while (!(zona == 1 || zona == 2 || zona == 3 || zona == 4 || zona == 5));
+                
+            }while(!(zona == 1 || zona == 2 || zona == 3 || zona == 4 || zona == 5));
+            
             while (opcion != 1 && opcion != 2) {
                 System.out.println("");
-                System.out.println("                                                            ¿Que desea hacer?");
-                System.out.println("                                                            1. Seguir vendiendo.");
-                System.out.println("                                                            2. Regresar al menu principal.");
-                System.out.print("                                        ");
+                System.out.println("                                                      ¿Que desea hacer?");
+                System.out.println("                                                      1. Seguir vendiendo.");
+                System.out.println("                                                      2. Regresar al menu principal.");
+                System.out.println("");
+                System.out.print("                                                      Opcion: ");
                 opcion = entrada.nextInt();
                 if (opcion == 1) {
                     condicion = true;
