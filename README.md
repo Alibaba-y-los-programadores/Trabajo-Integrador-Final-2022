@@ -1,7 +1,8 @@
+# Alibaba y los programadores
+
+![](](https://i.postimg.cc/CKCJYw7v/alibaba-y-los-programadores.png)
 
 # Proyecto Integrador checking tickets
-
-Alibaba y los Programadores 2022
 
 # Trabajos realizados
 
