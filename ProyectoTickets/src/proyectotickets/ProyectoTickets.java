@@ -26,13 +26,18 @@ public class ProyectoTickets {
         
         //Creo la matriz general y le habilito tickets para poder vender en puerta
         matriz = entradas.getMatriz();
-        vendidas = escenario.entradasVendidas(matriz);
-        novendidas = escenario.entradasNoVendidas(matriz);
+        vendidas = escenario.getVendidas(matriz);
+        novendidas = escenario.getNovendidas(matriz);
+        
+        //Configuracion de Login
+        login.setUsuario("alibaba");
+        login.setContrasenia("alibaba123");
+        login.setIntentos(3);
         
         //Valido el Login del usuario
         if(login.getValidacion()){
             limpiar.limpiarPantalla();
-            menu.menu(vendidas, novendidas);
+            menu.getMenu(vendidas, novendidas);
         }else{
             System.out.println("");
             System.out.println("");

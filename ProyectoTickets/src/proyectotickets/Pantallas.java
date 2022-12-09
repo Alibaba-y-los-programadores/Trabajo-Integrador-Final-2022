@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class Pantallas {
 
-    private int intentos = 3;
+    private int intentos;
     private String usuario;
     private String contrasenia;
     boolean validacion = false;
@@ -16,33 +16,22 @@ public class Pantallas {
     LimpiarPantalla limpiar = new LimpiarPantalla();
     
     public Pantallas() {
+        
     }
 
-    public Pantallas(int intentos, String usuario, String contrasenia, boolean validacion) {
+    private Pantallas(int intentos, String usuario, String contrasenia, boolean validacion) {
         this.intentos = intentos;
         this.usuario = usuario;
         this.contrasenia = contrasenia;
         this.validacion = validacion;
     }
 
-    public int getIntentos() {
-        return intentos;
-    }
-
     public void setIntentos(int intentos) {
         this.intentos = intentos;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-
     public void setUsuario(String usuario) {
         this.usuario = usuario;
-    }
-
-    public String getContrasenia() {
-        return contrasenia;
     }
 
     public void setContrasenia(String contrasenia) {
@@ -53,10 +42,6 @@ public class Pantallas {
         ingresousuario();
         return validacion;
     }
-
-    public void setValidacion(boolean validacion) {
-        this.validacion = validacion;
-    }  
     
     public void titulo() {
         
@@ -76,7 +61,7 @@ public class Pantallas {
 		System.out.println("");
 	}
 
-	// Este subproceso permite el ingreso con usuario y contraseï¿½a al programa, lo realiza el agente verificador. 
+	// Este metodo permite el ingreso con usuario y contrasenia al programa, lo realiza el agente verificador. 
 	public void ingresousuario() {
             
 		System.out.println("");
@@ -106,16 +91,14 @@ public class Pantallas {
 		System.out.println("");
                 
                 this.setIntentos(intentos);
-		// Este bucle nos mantiene en la pantalla principal hasta que se ingrese el usuario y contraseña correctos. 
+		// Este bucle nos mantiene en la pantalla principal hasta que se ingrese el usuario y contrasenia correctos. 
 		do {
 			System.out.print("                                        Escriba un Usuario: ");
-			usuario = entrada.nextLine();
-                        this.setUsuario(usuario);
+			String ingUsuario = entrada.nextLine();
 			System.out.print("                                        Escriba una Contrasenia: ");
-			contrasenia = entrada.nextLine();
-                        this.setContrasenia(contrasenia);
+			String ingContrasenia = entrada.nextLine();
 			intentos = intentos-1;
-			if (usuario.equals("alibaba") && contrasenia.equals("alibaba123")) {
+			if (ingUsuario.equals(usuario) && ingContrasenia.equals(contrasenia)) {
                             try {
                                 System.out.println("");
                                 System.out.println("                                        B I E N V E N I D O   A   S U  C A M P U S ");
@@ -136,7 +119,7 @@ public class Pantallas {
 
 	public void diseniomenu() {
                 limpiar.limpiarPantalla();
-		System.out.println(""); // no hay forma directa de borrar la consola en Java
+		System.out.println("");
 		System.out.println("");
 		System.out.println("");
 		System.out.println("*_________________________________________________________________________________________________________*");

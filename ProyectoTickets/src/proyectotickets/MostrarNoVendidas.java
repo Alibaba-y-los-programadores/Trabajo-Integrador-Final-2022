@@ -3,44 +3,25 @@ package proyectotickets;
 
 
 public class MostrarNoVendidas {
-    private int i;
-    private int j;
     
-
     public MostrarNoVendidas() {
-    }
-
-    public MostrarNoVendidas(int i, int j) {
-        this.i = i;
-        this.j = j;
-    }
-
-    public int getI() {
-        return i;
-    }
-
-    public void setI(int i) {
-        this.i = i;
-    }
-
-    public int getJ() {
-        return j;
-    }
-
-    public void setJ(int j) {
-        this.j = j;
+        
     }
     
+    public void getMostrarNoVendidas(String novendidas[][]){
+        
+        mostrarnovendidas(novendidas);
+        
+    }
     
-    public void mostrarnovendidas(String novendidas[][]) {
+    //Este metodo muestra en pantalla los tickets disponibles para comprar en puerta
+    private void mostrarnovendidas(String novendidas[][]) {
         Pantallas pantallas= new Pantallas();
         	
-		j = 0;
-                this.setJ(j);
-                        
+		int j = 0;
                         
 		pantallas.titulo();
-		for (i=0;i<=14;i++) {
+		for (int i=0;i<=14;i++) {
 			if ((j<=15)) {
 				if (novendidas[i][0].length()<=8) {
 					System.out.print(" ");

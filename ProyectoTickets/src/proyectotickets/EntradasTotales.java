@@ -1,6 +1,6 @@
 package proyectotickets;
 
-// Este subproceso genera las entradas totales con el cï¿½digo alfanumï¿½rico 
+// Este clase genera las entradas totales con el codigo alfanumerico 
 public class EntradasTotales {
 
     private String matriz;
@@ -13,15 +13,12 @@ public class EntradasTotales {
     private int numaleatorio;
     private String nums;
     private int totalentradas;
-    private int i;
-    private int j;
-    private int k;
 
     public EntradasTotales() {
         
     }
 
-    public EntradasTotales(String codigoletras, String codigonums, String codigotickets, int dimletras, int letraaleatoria, String letras, int numaleatorio, String nums, int totalentradas, String matriz) {
+    private EntradasTotales(String codigoletras, String codigonums, String codigotickets, int dimletras, int letraaleatoria, String letras, int numaleatorio, String nums, int totalentradas, String matriz) {
         this.codigoletras = codigoletras;
         this.codigonums = codigonums;
         this.codigotickets = codigotickets;
@@ -38,11 +35,11 @@ public class EntradasTotales {
         return generadorMatriz();
     }
 
-    public void setDimletras(int dimletras) {
+    private void setDimletras(int dimletras) {
         this.dimletras = dimletras;
     }
 
-    public String entradasTotales() {
+    private String entradasTotales() {
         codigoletras = "";
         codigonums = "";
         
@@ -52,7 +49,7 @@ public class EntradasTotales {
         this.dimletras = this.letras.length();
         this.setDimletras(this.dimletras-1);
         this.nums = "0123456789";
-        for (k = 0; k <= 2; k++) {
+        for (int k = 0; k <= 2; k++) {
             // Se Busca un numero al azar entre el 1 y el numero de letras 
             int numeroRandom = (int) (Math.random() * 101);
             this.letraaleatoria = (int) Math.round(Math.random() * this.dimletras);
@@ -67,13 +64,13 @@ public class EntradasTotales {
         return this.codigotickets;
     }
     
- // Esta funcion genera las entradas totales con el codigo alfanumerico 
-    public String[][] generadorMatriz() {
+ // Este metodo genera las entradas totales con el codigo alfanumerico 
+    private String[][] generadorMatriz() {
         String[][] matriz = new String[15][15];
         // Este bucle crea los codigos aleatorios de TODAS las entradas generadas para el concierto.
-        for (i = 0; i <= 14; i++) {
+        for (int i = 0; i <= 14; i++) {
             // Se considera una matriz de 15x15 es decir 225 entradas totales. 
-            for (j = 0; j <= 14; j++) {
+            for (int j = 0; j <= 14; j++) {
                 matriz[i][j] = entradasTotales();
             }
         }

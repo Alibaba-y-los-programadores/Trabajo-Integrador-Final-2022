@@ -7,6 +7,10 @@ import java.util.logging.Logger;
 
 public class LimpiarPantalla {
     
+    public LimpiarPantalla() {
+        
+    }
+    
     //Esta funcion simula presionar las teclas Ctrl+L para limpiar la consola de NetBeans
     public void limpiarPantalla() {
         try{
