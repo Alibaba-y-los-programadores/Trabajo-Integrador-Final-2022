@@ -1,6 +1,6 @@
 # Alibaba y los programadores
 
-![](](https://i.postimg.cc/CKCJYw7v/alibaba-y-los-programadores.png)
+![](https://i.postimg.cc/CKCJYw7v/alibaba-y-los-programadores.png)
 
 # Proyecto Integrador checking tickets
 
