@@ -9,8 +9,18 @@ public class Cobro {
     
     private final Scanner entrada = new Scanner(System.in); 
     
+    public Cobro(){
+    
+    }
+    
+    public void getCobroTicket(int cantcompra, int cantdisponible, String ticketsventa[], int zona){
+        
+        cobroTicket(cantcompra, cantdisponible, ticketsventa, zona);
+        
+    }
+    
         // Esta funcion permite la facturacion de las entradas vendidas en puerta 
-	public void cobro_ticket(int cantcompra, int cantdisponible, String ticketsventa[], int zona) {
+	private void cobroTicket(int cantcompra, int cantdisponible, String ticketsventa[], int zona) {
 		int l;
 		boolean rta;
 		double subtotal;

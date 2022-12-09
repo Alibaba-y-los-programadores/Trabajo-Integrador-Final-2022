@@ -136,7 +136,7 @@ public class Ventas {
                                 }
                             }
                         }
-                        cobro.cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
+                        cobro.getCobroTicket(cantcompra, cantdisponible, ticketsventa, zona);
                     }
                     case 2 -> {
                         cantcompra = entrada.nextInt();
@@ -161,7 +161,7 @@ public class Ventas {
                                 }
                             }
                         }
-                        cobro.cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
+                        cobro.getCobroTicket(cantcompra, cantdisponible, ticketsventa, zona);
                     }
                     case 3 -> {
                         cantcompra = entrada.nextInt();
@@ -186,7 +186,7 @@ public class Ventas {
                                 }
                             }
                         }
-                        cobro.cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
+                        cobro.getCobroTicket(cantcompra, cantdisponible, ticketsventa, zona);
                     }
                     case 4 -> {
                         cantcompra = entrada.nextInt();
@@ -211,7 +211,7 @@ public class Ventas {
                                 }
                             }
                         }
-                        cobro.cobro_ticket(cantcompra, cantdisponible, ticketsventa, zona);
+                        cobro.getCobroTicket(cantcompra, cantdisponible, ticketsventa, zona);
                     }
                     case 5 -> {
                         opcion = 2;
