@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 public class Cobro {
     
+    private double descuento;
+    
     private final Scanner entrada = new Scanner(System.in); 
     
         // Esta funcion permite la facturacion de las entradas vendidas en puerta 
 	public void cobro_ticket(int cantcompra, int cantdisponible, String ticketsventa[], int zona) {
-		double descuento;
 		int l;
 		boolean rta;
 		double subtotal;
@@ -46,13 +47,20 @@ public class Cobro {
 			rta = false;
 			do {
 				System.out.print("                                                Ingrese el % de descuento: ");
-				descuento = Double.parseDouble(entrada.nextLine());
-				if (descuento>=0 && descuento<=100) {
-					rta = true;
-				} else {
-					System.out.println("                                                Debe ingresar un valor entre 0 y 100!!! ");
-					System.out.println("");
-				}
+				String strDescuento = entrada.nextLine();
+                                if(isNumeric(strDescuento)){
+                                    descuento = Double.parseDouble(strDescuento);
+                                    if (descuento >= 0 && descuento <= 100) {
+                                        rta = true;
+                                    } else {
+                                        System.out.println("                                                Debe ingresar un valor entre 0 y 100!!! ");
+                                        System.out.println("");
+                                    }
+                                }else{
+                                    System.out.println("                                                Debe ingresar un valor entre 0 y 100!!! ");
+                                    System.out.println("");
+                                }
+				
 			} while (rta!=true);
 			// descuento a aplicar
 			totaldesc = (subtotal*descuento)/100;
@@ -64,4 +72,13 @@ public class Cobro {
 			System.out.println("");
 		}
 	}
+        
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+  }
 }
