@@ -1,20 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package proyectotickets;
 
 import java.util.Scanner;
 
-/**
- *
- * @author matia
- */
 public class Cobro {
     
-    Scanner entrada = new Scanner(System.in); 
+    private final Scanner entrada = new Scanner(System.in); 
     
-    // Este subproceso permite la facturacion de las entradas vendidas en puerta 
+        // Esta funcion permite la facturacion de las entradas vendidas en puerta 
 	public void cobro_ticket(int cantcompra, int cantdisponible, String ticketsventa[], int zona) {
 		double descuento;
 		int l;
@@ -24,6 +17,7 @@ public class Cobro {
 		double totaldesc;
 		int valorentrada;
 		System.out.println("");
+                
 		// si la cantidad requerida para la compra es mayor a los tickets disponibles no se procede a la venta.
 		if (cantcompra>cantdisponible) {
 			System.out.println("                                                El numero de entradas solicitadas supera al numero de entradas disponibles. ");

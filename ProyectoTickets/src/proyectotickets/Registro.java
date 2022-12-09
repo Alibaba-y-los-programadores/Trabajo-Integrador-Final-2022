@@ -116,6 +116,9 @@ public class Registro {
     }
 
     public void registro(String vendidas[][], String novendidas[][]){
+        
+        LimpiarPantalla limpiar = new LimpiarPantalla();
+        MostrarVendidas mostrarVendidas = new MostrarVendidas();
 
         // Se le pedira que ingrese el codigo a verificar.Debe ser ingresado manualmente. Si existe el codigo, apareceria una leyenda con codigo valido. Se sobreescribe dicha posicion con 00.
 
@@ -150,12 +153,9 @@ public class Registro {
                     }
                 }
             }
-       
-       System.out.println(""); // no hay forma directa de borrar la consola en Java
-           
-       MostrarVendidas mostrarVendidas = new MostrarVendidas();
-       
+       limpiar.limpiarPantalla();
        mostrarVendidas.mostrarvendidas(vendidas);
+       
             // Las siguientes condiciones evaluan si el ticket ingresado es valido, si no es valido o si ya fue registrado. 
             if (codigodet == true) {
                 System.out.println("");

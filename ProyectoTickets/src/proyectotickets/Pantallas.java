@@ -2,6 +2,8 @@ package proyectotickets;
 
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Pantallas {
 
@@ -10,7 +12,8 @@ public class Pantallas {
     private String contrasenia;
     boolean validacion = false;
     
-    Scanner entrada = new Scanner(System.in);   
+    Scanner entrada = new Scanner(System.in);  
+    LimpiarPantalla limpiar = new LimpiarPantalla();
     
     public Pantallas() {
     }
@@ -56,6 +59,7 @@ public class Pantallas {
     }  
     
     public void titulo() {
+        
 		System.out.println("");
 		System.out.println("                                                 *=====================================*");
 		System.out.println("                                                 *  E N T R A D A S   V E N D I D A S  *");
@@ -112,9 +116,14 @@ public class Pantallas {
                         this.setContrasenia(contrasenia);
 			intentos = intentos-1;
 			if (usuario.equals("alibaba") && contrasenia.equals("alibaba123")) {
+                            try {
                                 System.out.println("");
-				System.out.println("                                        B I E N V E N I D O   A   S U  C A M P U S ");
-				validacion = true;
+                                System.out.println("                                        B I E N V E N I D O   A   S U  C A M P U S ");
+                                validacion = true;
+                                Thread.sleep(2000);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(Pantallas.class.getName()).log(Level.SEVERE, null, ex);
+                            }
 			} else {
 				System.out.println("");
 				System.out.println("                                        Usuario o contrasenia INCONRRECTA, ¡VERIFIQUE SUS DATOS! ");
@@ -126,6 +135,7 @@ public class Pantallas {
 	}
 
 	public void diseniomenu() {
+                limpiar.limpiarPantalla();
 		System.out.println(""); // no hay forma directa de borrar la consola en Java
 		System.out.println("");
 		System.out.println("");
@@ -139,9 +149,13 @@ public class Pantallas {
 		System.out.println("                                        1.- Verificacion de tickets.");
 		System.out.println("                                        2.- Venta de tickets. ");
 		System.out.println("                                        3.- Salir.");
+                
 	}
 
 	public void mensajesalida() {
+            
+                System.out.println(""); 
+		System.out.println("");
 		System.out.println(""); 
 		System.out.println("");
 		System.out.println("               :::        :::        :::::::::::        :::::::::           :::        :::::::::          ::: ");

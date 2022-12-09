@@ -170,6 +170,7 @@ public class Ventas {
         MostrarNoVendidas mNoVendidas = new MostrarNoVendidas();
         MostrarNoVendidas mnVendidas = new MostrarNoVendidas();
         Cobro cobro = new Cobro();
+        LimpiarPantalla limpiar = new LimpiarPantalla();
         
         this.setCantcompra(cantcompra);
         this.setCantdisponible(cantdisponible);
@@ -192,6 +193,7 @@ public class Ventas {
         // todo el proceso de ventas se repetira mientras no se explicite salir del programa. 
         while (condicion == true) {
             opcion = 0;
+            limpiar.limpiarPantalla();
             // Se invoca al SubProceso de noVendidas y se muestra la matriz con las entradas disponibles a la venta.
             mNoVendidas.mostrarnovendidas(noVendidas);
             // Contador de entradas en palco izquierdo
@@ -351,7 +353,7 @@ public class Ventas {
                         opcion = 2;
                         condicion = false;
                     }
-                    default -> System.out.println("");
+                    default -> limpiar.limpiarPantalla();
                 }
                 
             }while(!(zona == 1 || zona == 2 || zona == 3 || zona == 4 || zona == 5));
@@ -370,7 +372,7 @@ public class Ventas {
                 // Esta condicion permite regresar al menu principal 
                 if (opcion == 2) {
                     condicion = false;
-                    System.out.println(""); // no hay forma directa de borrar la consola en Java
+                    limpiar.limpiarPantalla();
                 }
             }
         }

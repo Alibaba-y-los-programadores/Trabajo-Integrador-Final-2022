@@ -5,6 +5,8 @@
 package proyectotickets;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import proyectotickets.*;
 
 /**
@@ -50,6 +52,7 @@ public class Menu {
             MostrarVendidas mVendidas = new MostrarVendidas();
             Registro checking = new Registro();
             Ventas venta = new Ventas();
+            LimpiarPantalla limpiar = new LimpiarPantalla();
 		salir = false;
                 this.setSalir(salir);
 		while (salir==false) {
@@ -60,6 +63,7 @@ public class Menu {
                         this.setOpcion(opcion);
 			System.out.println("");
 			if (opcion.equals("1")) {
+                                limpiar.limpiarPantalla();
 				System.out.println(""); // no hay forma directa de borrar la consola en Java
 				// se invoca al subproceso mostrarVendidas y se muestra la matriz con las entradas vendidas 
 				mVendidas.mostrarvendidas(vendidas);
@@ -72,6 +76,7 @@ public class Menu {
 			}
 			if (opcion.equals("3")) {
 				System.out.println("                                        3.- Salir.");
+                                limpiar.limpiarPantalla();
 				salir = true;
 				pantallas.mensajesalida();
 			}
