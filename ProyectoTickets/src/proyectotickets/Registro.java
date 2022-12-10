@@ -53,7 +53,7 @@ public class Registro {
         System.out.println("");
         condicion = true;
         while(condicion == true){
-            System.out.print("                                        - Ingrese el código del ticket: ");
+            System.out.print("                                        - Ingrese el codigo del ticket: ");
             // Esta variable almacena el codigo de ticket que el agente verificador ingrese manualmente. 
             codigodev = entrada.nextLine().toUpperCase();
             codigodet = false;

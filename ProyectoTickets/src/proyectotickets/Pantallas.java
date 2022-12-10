@@ -123,7 +123,7 @@ public class Pantallas {
 		System.out.println("");
 		System.out.println("");
 		System.out.println("*_________________________________________________________________________________________________________*");
-		System.out.println("    B i e n v e n i d o   a l    p r o g r a m a   d e   c h e c k i n g   y   v e n t a  Ali Baba V1.0 ");
+		System.out.println("    B i e n v e n i d o   a l    P r o g r a m a   d e   C h e c k i n g   y   V e n t a  Ali Baba V2.0.0 ");
 		System.out.println("*=========================================================================================================*");
 		System.out.println("");
 		System.out.println("");
